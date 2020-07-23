@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace ExploringDynamicLibraries
@@ -18,6 +19,10 @@ namespace ExploringDynamicLibraries
                 Console.WriteLine(type.AssemblyQualifiedName);
             }
             Console.WriteLine("Done");
+
+            Console.WriteLine("Now using MyFirstLibrary class HelloWorld...");
+            dynamic libraryHelloWorld = Activator.CreateInstance(LibraryTypes.Where(t => t.FullName == "MyFirstLibrary.HelloWorld").First());
+
         }
     }
 }
