@@ -12,7 +12,7 @@ namespace ExploringDynamicLibraries
 
             Console.WriteLine("Loading dynamic library...");
             List<Type> LibraryTypes = new List<Type>();
-            LibraryTypes.AddRange(Assembly.Load("ExploringDynamicLibrarys").GetTypes());
+            LibraryTypes.AddRange(Assembly.Load("ExploringDynamicLibraries").GetTypes());
             foreach (var type in LibraryTypes)
             {
                 Console.WriteLine(type.AssemblyQualifiedName);
