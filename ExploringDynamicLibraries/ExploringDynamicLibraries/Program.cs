@@ -22,7 +22,13 @@ namespace ExploringDynamicLibraries
 
             Console.WriteLine("Now using MyFirstLibrary class HelloWorld...");
             dynamic libraryHelloWorld = Activator.CreateInstance(LibraryTypes.Where(t => t.FullName == "MyFirstLibrary.HelloWorld").First());
+            libraryHelloWorld.Initialize();
+            libraryHelloWorld.Message = "This is wonderful :)";
+            libraryHelloWorld.Run();
+            libraryHelloWorld.Abort();
+            libraryHelloWorld.Dispose();
 
+            Console.ReadLine();
         }
     }
 }
